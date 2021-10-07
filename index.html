@@ -9,7 +9,7 @@
     <meta name="description" content="Aerobridge Homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aerobridge.in</title>
+    <title>Aerobridge.io</title>
 </head>
 <body>
     <header>        
@@ -17,29 +17,22 @@
     </header>
 
     <main>
-        
+       
 <h1 id="introduction">Introduction</h1>
-<p>The <a href="https://dgca.gov.in/digigov-portal/">Directorate General of Civil Aviation (DGCA)</a> in India has unveiled a policy of &quot;No permission - No takeoff&quot; for drone flights. This means that public and private companies intending to fly drones in India need to interface with DGCA&#39;s infrastructure for flight permissions and other authorizations. These APIs are called India&#39;s <a href="https://digitalsky.dgca.gov.in/">Digital Sky</a> eco-system. Aerobridge is a server that helps you interface with the APIs in a standardized fashion and be in compliance with the regulatory requirements around operating drones.</p>
+<p>Aerobridge is server to help you with your drone flights and operations. . Aerobridge is a server that helps you interface with the APIs in a standardized fashion and be in compliance with the regulatory requirements around operating drones.</p>
 <h2 id="how-can-aerobridge-help-you-">How can Aerobridge help you?</h2>
 <p>If you are a drone manufacturer, operator or just a researcher, you can benefit by adopting Aerobridge in your operational stack:</p>
 <ul>
-<li>Standard way to communicate with Digital Sky APIs</li>
+<li>Store and approve flight plans</li>
+<li>Manage Drone fleet</li>
 <li>Integration with Ardupilot</li>
 <li>Manage permission artefacts and flight logs</li>
 <li>RFM integration</li>
-<li>Easily manage compliance with NPNT</li>
-</ul>
-
-<h2 id="test-drive">Test drive</h2>
-<ul>
-<li>You can see the frontend using the <a href="https://aerobridgetestflight.herokuapp.com/launchpad">Testflight frontend</a></li>
-<li>Take a look at the backend API: <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/openskies-sh/aerobridge/master/api/aerobridge-1.0.0.resolved.yaml">Aerobridge OpenAPI renderer</a></li>
-
 </ul>
 <h2 id="webinar-and-pilot-program-">Webinar and pilot program ✨</h2>
 <p>We work with drone manufacturers to enable them to become compliant with NPNT by regular onboarding run through our canary program. You can find out more about this on our regular <a href="https://webinar.aerobridge.in">webinar</a>.</p>
 <h2 id="get-involved">Get Involved</h2>
-<p>Aerobridge is fully open source and you can get involved by participating in our weekly calls (details shortly) and our Slack channel: <a href="https://forms.gle/qdUgjJHiFQn2Yuhg6">Request access here</a>. Whether you are a drone enthusiast or an expert, join our community to shape the future of drone flights in India. There are many benefits of participation:</p>
+<p>Aerobridge is fully open source and you can get involved by participating in our weekly calls and our Slack channel: <a href="https://forms.gle/qdUgjJHiFQn2Yuhg6">Request access here</a>. Whether you are a drone enthusiast or an expert, join our community to shape the future of drone flights in India. There are many benefits of participation:</p>
 <ul>
 <li>You can shape the future of this software</li>
 <li>Join the community of fellow professionals interested in an open flexible drone eco-system in India</li>
@@ -47,32 +40,37 @@
 <li>Reduce the time and cost of compliance</li>
 </ul>
 <h2 id="technical-details">Technical Details</h2>
-<p>This is an open source implementation of the &quot;Manufacturer&#39;s Management Server&quot; to help with key signing and managing interactions with India&#39;s <a href="https://digitalsky.dgca.gov.in/">Digital Sky</a> API infrastructure. This server can be deployed to any public and private cloud and be used to manage communication with DGCA&#39;s Digital Sky Infrastructure and manage NPNT permissions. For a more technical introduction, see this <a href="https://docs.google.com/presentation/d/1cZrNwNrLtLIj5eKEGql2HN-G1gZFbbGhGbiTB1i16So/edit?usp=sharing">presentation</a>.</p>
+<p>This is an open source implementation of the &quot;Manufacturer&#39;s Management Server&quot; to help with key signing and managing interactions with external APIs. This server can be deployed to any public and private cloud and be used to manage communication.</p>
+
 <h2 id="aerobridge-stack">Aerobridge Stack</h2>
-<p>As of January 2021, Aerobridge provides the following toolset:</p>
+<p>As of September 2021, Aerobridge provides the following toolset:</p>
 <ul>
 <li><p><strong>Management Server</strong></p>
 <ul>
-<li><strong>Drone Registration</strong>: Submit details of a drone and get a UIN number </li>
-<li><strong>Flight log management</strong>: Upload Bundled Logs to the DGCA API and store logs on the server</li>
+<li><strong>Flight log management</strong>: Store Bundled Logs on the server</li>
 <li><strong>Permission Artefact management</strong>: Submission of flight plans and fetching permission artefacts</li>
+<li><strong>Key Storage</strong>: Store / manage public keys for your operations</li>
 </ul>
 </li>
 <li><p><strong>GCS Module</strong></p>
 <ul>
-<li><a href="https://github.com/openskies-sh/mavlink-aerobridge">Mavlink Aerobridge</a> Integration with RFM</li>
+<li><a href="https://github.com/openskies-sh/qgroundcontrol">QGCS Aerobridge Guardian</a> Integration with GCS / RFM</li>
 </ul>
 </li>
 <li><p><strong>RFM Module</strong></p>
 <ul>
-<li>A customized Flight Controller Firmware and Bootloader (<a href="https://github.com/ArduPilot/ardupilot/pull/16738">Ardupilot</a>)</li>
+<li>A customized Flight Controller Firmware and Bootloader (coming soon)</li>
 </ul>
 </li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
 <li>This repository uses the drone registry schema from <a href="https://aircraftregistry.herokuapp.com">Aircraft Registry</a> project.</li>
-<li>Further details regarding NPNT can be found in the latest <a href="https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/headerblock/drones/DGCA%20RPAS%20Guidance%20Manual.pdf">RPAS Guidance Manual</a>.</li>
+</ul>
+<h2 id="test-drive">Test drive</h2>
+<ul>
+<li>You can see the frontend using the <a href="https://aerobridgetestflight.herokuapp.com/launchpad">Testflight frontend</a></li>
+<li>Take a look at the backend API: <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/openskies-sh/aerobridge/master/api/aerobridge-1.0.0.resolved.yaml">Aerobridge OpenAPI renderer</a></li>
 </ul>
 <h2 id="license">LICENSE</h2>
 <p>Aerobridge is licensed under a BSL license popularized by other products such as <a href="https://www.cockroachlabs.com/docs/stable/licensing-faqs.html">CockroachDB</a> and <a href="https://blog.sentry.io/2019/11/06/relicensing-sentry">Sentry</a>. Basically, it means the following:</p>
@@ -80,7 +78,7 @@
 <li>You cannot offer a version of Aerobridge as a service to third parties, if you want to do this, you will need an agreement with Openskies (the license grant restriction)</li>
 <li>After 24 months, the code becomes Apache-2.0 licensed (the conversion period)</li>
 </ul>
-<p>In other words, if you want to host / run Aerobridge inside your company for your own operations, you are free to do so without any concerns or restrictions. If you want to offer services to third parties using a release of Aerobridge the opensource project that is less than two years old, you will need an agreement from Openskies.</p>
+<p>In other words, if you want to host / run Aerobridge inside your company for your own operations, you are free to do so without any concerns or restrictions. If you want to offer services to third parties using a release of Aerobridge the opensource project that is less than two years old, you will need an agreement  from Openskies.</p>
 <h2 id="logo-source-credit">Logo source / Credit</h2>
 <p><a href="https://hatchful.shopify.com/">Hatchful</a></p>
 
